@@ -1,16 +1,16 @@
 #include <stdio.h>
 
-void engelAnalizi(float *sensorVerileri, int boyut){
-    for (int i = 0; i < boyut; i++){
-        if (sensorVerileri[i] < 1.0){
-            printf("ACİL DURUM! Engel: %.1f tespit edildi. (RAM Adresi: %p)", sensorVerileri[i], &sensorVerileri[i]);
+void obstacleAnalysis(float *sensorData, int size){
+    for (int i = 0; i < size; i++){
+        if (sensorData[i] < 1.0){
+            printf("EMERGENCY! Obstacle: %.1f detected. (RAM Address: %p)", sensorData[i], &sensorData[i]);
             break;
         }
     }
 }
 
 int main() {
-    float lidarVerileri[5] = {3.2, 4.5, 0.8, 5.1, 1.2};
-    engelAnalizi(lidarVerileri, sizeof(lidarVerileri)/sizeof(lidarVerileri[0]));
+    float lidarData[5] = {3.2, 4.5, 0.8, 5.1, 1.2};
+    obstacleAnalysis(lidarData, sizeof(lidarData)/sizeof(lidarData[0]));
     return 0;
 }

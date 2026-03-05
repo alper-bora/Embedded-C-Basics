@@ -2,37 +2,37 @@
 #include <stdlib.h>
 #include "queue.h"
 
-struct QueueNode * ilk = NULL; //Queue start
-struct QueueNode * son = NULL; //Queue finish
+struct QueueNode * first = NULL; //Queue start
+struct QueueNode * last = NULL; //Queue finish
 
-void enqueue(int yeni_deger)
+void enqueue(int new_value)
 {
-    struct QueueNode * yeni_vagon = malloc(sizeof(struct QueueNode));
-    yeni_vagon->id = yeni_deger;
-    yeni_vagon->sonraki = NULL;
+    struct QueueNode * toAdd = malloc(sizeof(struct QueueNode));
+    toAdd->id = new_value;
+    toAdd->next = NULL;
 
-    if (son == NULL)
+    if (last == NULL)
     {
-        ilk = yeni_vagon;
-        son = yeni_vagon;
+        first = toAdd;
+        last = toAdd;
         return;
     }
-    son->sonraki = yeni_vagon;
-    son = yeni_vagon;
+    last->next = toAdd;
+    last = toAdd;
 }
 
 int dequeue()
 {
-    int kurtarilan_deger;
-    if (ilk == NULL)
+    int salvaged_value;
+    if (first == NULL)
     {
-        printf("Kuyruk bos!");
+        printf("Queue is empty!");
         return -1;
     }
-    struct QueueNode * silinecek = ilk;
-    kurtarilan_deger = silinecek->id;
-    ilk = ilk->sonraki;
-    if (ilk == NULL) son = NULL;
-    free(silinecek);
-    return kurtarilan_deger;
+    struct QueueNode * toDelete = first;
+    salvaged_value = toDelete->id;
+    first = first->next;
+    if (first == NULL) last = NULL;
+    free(toDelete);
+    return salvaged_value;
 }

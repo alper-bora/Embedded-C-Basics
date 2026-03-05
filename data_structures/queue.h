@@ -3,10 +3,10 @@
 
 struct QueueNode{
     int id;
-    struct QueueNode * sonraki;
+    struct QueueNode * next;
 };
 
-void enqueue(int yeni_deger);
+void enqueue(int new_value);
 int dequeue();
 
 #endif //EMBEDDED_C_BASICS_QUEUES_H

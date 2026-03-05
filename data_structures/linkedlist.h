@@ -3,10 +3,10 @@
 
 struct LinkedNode{
     int id;
-    struct LinkedNode * sonraki;
+    struct LinkedNode * next;
 };
-void sonaEkle(int yeni_id);
-void vagonPatlat(int vagon_id);
-void rotayiYazdir();
+void addToLast(int new_id);
+void destroyWagon(int wagon_id);
+void printRoute();
 
 #endif //EMBEDDED_C_BASICS_LINKEDLIST_H

@@ -2,16 +2,16 @@
 #include <string.h>
 
 int main(){
-    char gelenKomut[] = "DUR";
-    int boyut = sizeof(gelenKomut)/sizeof(gelenKomut[0]);
-    for (int i = 0; i < boyut; i++){
-        if (gelenKomut[i] == '\n'){
-            gelenKomut[i] = '\0';
+    char incomingCmd[] = "STOP";
+    int size = sizeof(incomingCmd)/sizeof(incomingCmd[0]);
+    for (int i = 0; i < size; i++){
+        if (incomingCmd[i] == '\n'){
+            incomingCmd[i] = '\0';
             break;
         }
     }
-    if (strcmp(gelenKomut, "DUR") == 0){
-        printf("FRENLER AKTİF!!");
+    if (strcmp(incomingCmd, "STOP") == 0){
+        printf("BRAKES ACTIVATED!!");
     }
     return 0;
 }

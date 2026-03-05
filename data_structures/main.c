@@ -22,19 +22,18 @@ int main() {
 
     // Linked Lists
     printf("[3] Linked List (Rota Yönetimi) Test Ediliyor...\n");
-    sonaEkle(101);
-    sonaEkle(102);
-    sonaEkle(103);
+    addToLast(101);
+    addToLast(102);
+    addToLast(103);
 
     printf("Mevcut Rota Durakları:\n");
-    rotayiYazdir();
+    printRoute();
 
     printf("\n2. Durak İptal Ediliyor...\n");
-    vagonPatlat(102);
+    destroyWagon(102);
 
     printf("Güncel Rota:\n");
-    rotayiYazdir();
+    printRoute();
 
-    printf("\n--- Tüm Sistemler Stabil. Şantiye Kapatılıyor. ---\n");
     return 0;
 }

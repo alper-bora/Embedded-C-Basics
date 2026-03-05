@@ -2,26 +2,26 @@
 #include <stdlib.h>
 #include "stack.h"
 
-struct StackNode * tepe = NULL;
+struct StackNode * head = NULL;
 
-void push(int yeni_deger)
+void push(int new_value)
 {
-    struct StackNode  * yeni_vagon = malloc(sizeof(struct StackNode));
-    yeni_vagon->id = yeni_deger;
-    yeni_vagon->sonraki = tepe;
-    tepe = yeni_vagon;
+    struct StackNode  * new_wagon = malloc(sizeof(struct StackNode));
+    new_wagon->id = new_value;
+    new_wagon->next = head;
+    head = new_wagon;
 }
 
 int pop()
 {
-    if (tepe == NULL)
+    if (head == NULL)
     {
-        printf("Yigin bos!");
+        printf("Stack is empty!");
         return -1;
     }
-    struct StackNode * silinecek = tepe;
-    tepe = tepe->sonraki;
-    int kurtarilan_deger = silinecek->id;
-    free(silinecek);
-    return kurtarilan_deger;
+    struct StackNode * toDelete = head;
+    head = head->next;
+    int salvaged_value = toDelete->id;
+    free(toDelete);
+    return salvaged_value;
 }

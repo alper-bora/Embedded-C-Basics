@@ -2,55 +2,55 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
-struct LinkedNode * tepe = NULL; //Stacks GPS
+struct LinkedNode * head = NULL; //Stacks GPS
 
-void sonaEkle(int yeni_id){
-    struct LinkedNode * yeni_durak = malloc(sizeof(struct LinkedNode));
-    yeni_durak -> id = yeni_id;
-    yeni_durak -> sonraki = NULL;
+void addToLast(int new_id){
+    struct LinkedNode * new_stop = malloc(sizeof(struct LinkedNode));
+    new_stop -> id = new_id;
+    new_stop -> next = NULL;
 
-    if (tepe == NULL){
-        tepe = yeni_durak;
+    if (head == NULL){
+        head = new_stop;
         return;
     }
 
-    struct LinkedNode * gecici = tepe;
+    struct LinkedNode * temp = head;
 
-    while(gecici->sonraki != NULL){
-        gecici = gecici -> sonraki;
+    while(temp->next != NULL){
+        temp = temp -> next;
     }
 
-    gecici->sonraki = yeni_durak;
+    temp->next = new_stop;
 }
 
-void vagonPatlat(int vagon_id){
-    struct LinkedNode * gecici = tepe;
-    struct LinkedNode * onceki = NULL;
+void destroyWagon(int wagon_id){
+    struct LinkedNode * temp = head;
+    struct LinkedNode * previous = NULL;
 
-    if (gecici != NULL && gecici->id == vagon_id) {
-        tepe = gecici->sonraki;
-        free(gecici);
+    if (temp != NULL && temp->id == wagon_id) {
+        head = temp->next;
+        free(temp);
         return;
     }
 
-    while (gecici != NULL && gecici->id != vagon_id){
-        onceki = gecici;
-        gecici = gecici->sonraki;
+    while (temp != NULL && temp->id != wagon_id){
+        previous = temp;
+        temp = temp->next;
     }
 
-    if (gecici == NULL){
+    if (temp == NULL){
         return;
     }
 
-    onceki->sonraki = gecici->sonraki;
-    free(gecici);
+    previous->next = temp->next;
+    free(temp);
 }
 
-void rotayiYazdir(){
-    struct LinkedNode * gecici = tepe;
-    printf("--- Duraklar ---\n");
-    while (gecici != NULL){
-        printf("Durak: %d\n", gecici->id);
-        gecici = gecici -> sonraki;
+void printRoute(){
+    struct LinkedNode * temp = head;
+    printf("--- Stops ---\n");
+    while (temp != NULL){
+        printf("Stop: %d\n", temp->id);
+        temp = temp -> next;
     }
 }
