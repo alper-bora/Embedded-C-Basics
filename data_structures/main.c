@@ -5,34 +5,34 @@
 
 int main() {
     // Stacks
-    printf("[1] Stack (Acil Durum Hataları) Test Ediliyor...\n");
+    printf("[1] Testing Stack (Emergency Errors)...\n");
     push(404);
     push(505);
-    printf("Kritik Hata Gideriliyor: %d\n", pop());
-    printf("Sonraki Hata Gideriliyor: %d\n\n", pop());
+    printf("Fixing Critical Errors: %d\n", pop());
+    printf("Fixing the Next Error: %d\n\n", pop());
 
 
     // Queues
-    printf("[2] Queue (Sensör Veri Sırası) Test Ediliyor...\n");
+    printf("[2] Testing Queue (Sensor Data Queue)...\n");
     enqueue(1);
     enqueue(2);
-    printf("İşlenen Sinyal: %d\n", dequeue());
-    printf("İşlenen Sinyal: %d\n\n", dequeue());
+    printf("Processed Signal: %d\n", dequeue());
+    printf("Processed Signal: %d\n\n", dequeue());
 
 
     // Linked Lists
-    printf("[3] Linked List (Rota Yönetimi) Test Ediliyor...\n");
+    printf("[3] Testing Linked List (Route Management)...\n");
     addToLast(101);
     addToLast(102);
     addToLast(103);
 
-    printf("Mevcut Rota Durakları:\n");
+    printf("Current Stops in the Route:\n");
     printRoute();
 
-    printf("\n2. Durak İptal Ediliyor...\n");
+    printf("\n2. Canceling the stop...\n");
     destroyWagon(102);
 
-    printf("Güncel Rota:\n");
+    printf("Current Rouet:\n");
     printRoute();
 
     return 0;
