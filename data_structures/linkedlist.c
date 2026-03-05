@@ -4,7 +4,7 @@
 
 struct LinkedNode * head = NULL; //Stacks GPS
 
-void addToLast(int new_id){
+void addNode(int new_id){
     struct LinkedNode * new_stop = malloc(sizeof(struct LinkedNode));
     new_stop -> id = new_id;
     new_stop -> next = NULL;
@@ -23,7 +23,7 @@ void addToLast(int new_id){
     temp->next = new_stop;
 }
 
-void destroyWagon(int wagon_id){
+void deleteNode(int wagon_id){
     struct LinkedNode * temp = head;
     struct LinkedNode * previous = NULL;
 

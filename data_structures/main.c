@@ -22,15 +22,15 @@ int main() {
 
     // Linked Lists
     printf("[3] Testing Linked List (Route Management)...\n");
-    addToLast(101);
-    addToLast(102);
-    addToLast(103);
+    addNode(101);
+    addNode(102);
+    addNode(103);
 
     printf("Current Stops in the Route:\n");
     printRoute();
 
     printf("\n2. Canceling the stop...\n");
-    destroyWagon(102);
+    deleteNode(102);
 
     printf("Current Rouet:\n");
     printRoute();

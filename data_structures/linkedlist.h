@@ -5,8 +5,8 @@ struct LinkedNode{
     int id;
     struct LinkedNode * next;
 };
-void addToLast(int new_id);
-void destroyWagon(int wagon_id);
+void addNode(int new_id);
+void deleteNode(int wagon_id);
 void printRoute();
 
 #endif //EMBEDDED_C_BASICS_LINKEDLIST_H
