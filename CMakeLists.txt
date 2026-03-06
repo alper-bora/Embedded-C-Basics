@@ -8,4 +8,5 @@ add_executable(Embedded_C_Basics data_structures/main.c data_structures/stack.c
         data_structures/queue.c
         data_structures/linkedlist.h
         data_structures/linkedlist.c
-        data_structures/data_structures.c)
+        data_structures/tree.h
+        data_structures/tree.c)
