@@ -9,4 +9,8 @@ add_executable(Embedded_C_Basics data_structures/main.c data_structures/stack.c
         data_structures/linkedlist.h
         data_structures/linkedlist.c
         data_structures/tree.h
-        data_structures/tree.c)
+        data_structures/tree.c
+        bitwise_operations/main.c
+        enums_unions/main.c
+        file_io/main.c
+        ring_buffer/main.c)

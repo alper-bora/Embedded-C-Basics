@@ -4,7 +4,7 @@
 #include "linkedlist.h"
 #include "tree.h"
 
-int main() {
+int main_dsa() {
     // Binary Trees
     printf("[0] Testing Binary Tree (GPS)...\n");
     struct TreeNode* root = createNode(50);
