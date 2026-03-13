@@ -13,4 +13,6 @@ add_executable(Embedded_C_Basics data_structures/main.c data_structures/stack.c
         bitwise_operations/main.c
         enums_unions/main.c
         file_io/main.c
-        ring_buffer/main.c)
+        ring_buffer/main.c
+        sorting_algorithms/bubble_sort.c
+        sorting_algorithms/insertion_sort.c)
