@@ -20,4 +20,6 @@ add_executable(Embedded_C_Basics data_structures/main.c data_structures/stack.c
         graphs/dfs.h
         graphs/bfs.c
         graphs/bfs.h
-        bitwise_ops/main.c)
+        bitwise_ops/main.c
+        io_exercises/car.c
+        io_exercises/car.c)
